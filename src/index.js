@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './assets/styles/global.css'
+
+import Canvas from './components/Canvas'
+
 function App() {
   return (
-    <h1>Hello world</h1>
+    <Canvas />
   )
 }
 

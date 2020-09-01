@@ -1,0 +1,12 @@
+.selection {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  border: 2px solid salmon;
+}
+
+.selection.hidden {
+  display: none;
+}
