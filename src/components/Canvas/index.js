@@ -5,8 +5,8 @@ import './index.css'
 import SelectionArea from '../SelectionArea'
 
 function Canvas() {
-  const [selectionX, setSelectionX] = useState(null)
-  const [selectionY, setSelectionY] = useState(null)
+  const [selectionX, setSelectionX] = useState(800)
+  const [selectionY, setSelectionY] = useState(400)
   const [showSelection, setShowSelection] = useState(false)
 
   function handleClick(e) {

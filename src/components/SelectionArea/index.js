@@ -6,8 +6,7 @@ function SelectionArea(props) {
   const {showSelection, x, y} = props;
 
   const position = {
-    left: x,
-    top: y,
+    transform: `translate(${x}px, ${y}px)`,
   }
 
   return (
