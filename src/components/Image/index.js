@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./index.css";
 
@@ -7,13 +7,12 @@ import SelectionArea from "../SelectionArea";
 
 function Image() {
   // TODO: It is preferred to have the start location of the circle to be the center of the image
-  const [selectionX, setSelectionX] = useState(0);
-  const [selectionY, setSelectionY] = useState(0);
+  const [selectPosition, setSelectPosition] = useState({ x: 0, y: 0 });
   const [showSelection, setShowSelection] = useState(false);
   const [charactersFound, setCharactersFound] = useState([
     {
       name: "Data",
-      found: true,
+      found: false,
       x: 717,
       y: 947,
     },
@@ -25,25 +24,25 @@ function Image() {
     },
     {
       name: "Agent Smith",
-      found: true,
+      found: false,
       x: 592,
       y: 142,
     },
     {
       name: "R2-D2",
-      found: true,
+      found: false,
       x: 209,
       y: 664,
     },
     {
       name: "Astroboy",
-      found: true,
+      found: false,
       x: 238,
       y: 1262,
     },
     {
       name: "Bender",
-      found: true,
+      found: false,
       x: 159,
       y: 407,
     },
@@ -55,23 +54,34 @@ function Image() {
     const position = getPosition(e);
 
     // Offset the click location in half the diameter of the SelectionArea circle in order to properly center itself
-    setSelectionX(position.x - 50);
-    setSelectionY(position.y - 50);
+    setSelectPosition({ x: position.x - 50, y: position.y - 50 });
   }
 
   function getPosition(e) {
-    var rect = e.target.getBoundingClientRect();
-    var x = Math.round(e.clientX - rect.left);
-    var y = Math.round(e.clientY - rect.top);
+    let rect = e.target.getBoundingClientRect();
+    let x = Math.round(e.clientX - rect.left);
+    let y = Math.round(e.clientY - rect.top);
 
+    // Checks whether the click was directly on the image or onto the highlights circles. Adjust position accordingly
     if (e.target.id === "main-img") {
       return { x, y };
     } else if (e.target.id === "cursor") {
-      return { x: x + selectionX, y: y + selectionY };
+      return { x: x + selectPosition.x, y: y + selectPosition.y };
     } else {
-      return { x: selectionX + 50, y: selectionY + 50 };
+      return { x: selectPosition.x + 50, y: selectPosition.y + 50 };
     }
   }
+
+  useEffect(() => {
+    charactersFound.forEach((char) => {
+      if (selectPosition.x > char.x - 50 && selectPosition.x < char.x + 50) {
+        if (selectPosition.y > char.y - 50 && selectPosition.y < char.y + 50) {
+          char.found = true;
+          setShowSelection(false);
+        }
+      }
+    });
+  }, [charactersFound, selectPosition]);
 
   return (
     <div className="image-container">
@@ -81,8 +91,8 @@ function Image() {
         <SelectionArea
           type={"cursor"}
           showSelection={showSelection}
-          x={selectionX}
-          y={selectionY}
+          x={selectPosition.x}
+          y={selectPosition.y}
         />
 
         {charactersFound.map((char) => {
