@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import './index.css'
+import "./index.css";
 
-import Image from '../Image'
+import Image from "../Image";
 
 function Canvas() {
-
   return (
-    <div className="canvas-container">      
+    <div className="canvas-container">
       <Image />
     </div>
-  )
+  );
 }
 
-export default Canvas
+export default Canvas;
