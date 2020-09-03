@@ -1,6 +1,7 @@
 :root {
   --default-color: #1a1a2e;
   --transparent-default-color: rgba(26, 26, 46, 0.7);
+  --transparent-dark-color: rgba(26, 26, 46, 0.9);
 }
 
 * {
@@ -8,6 +9,11 @@
   padding: 0;
 
   box-sizing: border-box;
+  overflow-x: hidden;
 
   color: var(--default-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }

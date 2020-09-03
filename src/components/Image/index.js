@@ -6,11 +6,13 @@ import Img from "../../assets/images/raid3.png";
 import charactersData from "../../data/raid3.json";
 import SelectionArea from "../SelectionArea";
 
-function Image() {
+function Image(props) {
   // TODO: It is preferred to have the start location of the circle to be the center of the image
   const [selectPosition, setSelectPosition] = useState({ x: 0, y: 0 });
   const [showSelection, setShowSelection] = useState(false);
   const [characters, setCharacters] = useState(charactersData);
+
+  const { setGameOver } = props;
 
   function handleClick(e) {
     if (!showSelection) setShowSelection(true);
@@ -49,6 +51,20 @@ function Image() {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectPosition]);
+
+  useEffect(() => {
+    const gameOver = characters.reduce(
+      (prev, curr) => {
+        return { found: prev.found && curr.found };
+      },
+      { found: true }
+    );
+
+    if (gameOver.found === true) setGameOver(true);
+    console.log(gameOver);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [characters]);
 
   return (
     <div className="image-container">

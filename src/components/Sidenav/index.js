@@ -2,6 +2,7 @@ import React from "react";
 
 import "./index.css";
 
+// TODO: Link each character to its IMDb page with a photo for reference
 function Sidenav() {
   return (
     <div className="sidenav">

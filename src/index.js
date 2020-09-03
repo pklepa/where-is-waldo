@@ -4,10 +4,10 @@ import ReactDOM from "react-dom";
 import "./assets/styles/global.css";
 import "./assets/styles/fonts.css";
 
-import Canvas from "./components/Canvas";
+import GamePage from "./views/GamePage";
 
 function App() {
-  return <Canvas />;
+  return <GamePage />;
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));

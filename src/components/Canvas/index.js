@@ -5,11 +5,11 @@ import "./index.css";
 import Image from "../Image";
 import Sidenav from "../Sidenav";
 
-function Canvas() {
+function Canvas(props) {
   return (
     <div className="canvas-container">
       <Sidenav />
-      <Image />
+      <Image setGameOver={props.setGameOver} />
     </div>
   );
 }
