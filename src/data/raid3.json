@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "name": "Data",
+    "found": false,
+    "x": 717,
+    "y": 947
+  },
+  {
+    "id": 1,
+    "name": "John Connor",
+    "found": false,
+    "x": 778,
+    "y": 38
+  },
+  {
+    "id": 2,
+    "name": "Agent Smith",
+    "found": false,
+    "x": 592,
+    "y": 142
+  },
+  {
+    "id": 3,
+    "name": "R2-D2",
+    "found": false,
+    "x": 209,
+    "y": 664
+  },
+  {
+    "id": 4,
+    "name": "Astroboy",
+    "found": false,
+    "x": 238,
+    "y": 1262
+  },
+  {
+    "id": 5,
+    "name": "Bender",
+    "found": false,
+    "x": 159,
+    "y": 407
+  }
+]

@@ -3,50 +3,14 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 
 import Img from "../../assets/images/raid3.png";
+import charactersData from "../../data/raid3.json";
 import SelectionArea from "../SelectionArea";
 
 function Image() {
   // TODO: It is preferred to have the start location of the circle to be the center of the image
   const [selectPosition, setSelectPosition] = useState({ x: 0, y: 0 });
   const [showSelection, setShowSelection] = useState(false);
-  const [charactersFound, setCharactersFound] = useState([
-    {
-      name: "Data",
-      found: false,
-      x: 717,
-      y: 947,
-    },
-    {
-      name: "John Connor",
-      found: false,
-      x: 778,
-      y: 38,
-    },
-    {
-      name: "Agent Smith",
-      found: false,
-      x: 592,
-      y: 142,
-    },
-    {
-      name: "R2-D2",
-      found: false,
-      x: 209,
-      y: 664,
-    },
-    {
-      name: "Astroboy",
-      found: false,
-      x: 238,
-      y: 1262,
-    },
-    {
-      name: "Bender",
-      found: false,
-      x: 159,
-      y: 407,
-    },
-  ]);
+  const [characters, setCharacters] = useState(charactersData);
 
   function handleClick(e) {
     if (!showSelection) setShowSelection(true);
@@ -73,15 +37,18 @@ function Image() {
   }
 
   useEffect(() => {
-    charactersFound.forEach((char) => {
+    const updatedCharacters = characters.slice();
+    updatedCharacters.forEach((char) => {
       if (selectPosition.x > char.x - 50 && selectPosition.x < char.x + 50) {
         if (selectPosition.y > char.y - 50 && selectPosition.y < char.y + 50) {
           char.found = true;
           setShowSelection(false);
+          setCharacters(updatedCharacters);
         }
       }
     });
-  }, [charactersFound, selectPosition]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectPosition]);
 
   return (
     <div className="image-container">
@@ -95,7 +62,7 @@ function Image() {
           y={selectPosition.y}
         />
 
-        {charactersFound.map((char) => {
+        {characters.map((char) => {
           return (
             <SelectionArea
               type={"static"}
