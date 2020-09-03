@@ -6,6 +6,13 @@
 
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.sidenav .sidenav-content {
+  position: fixed;
+  margin: 0;
+  width: 15vw;
 }
 
 .sidenav header {
@@ -30,8 +37,8 @@
 }
 
 .sidenav section {
-  padding-left: 20px;
   font-family: "Tajawal", sans-serif;
+  padding: 0 20px;
 }
 
 .sidenav section h2 {
@@ -41,14 +48,27 @@
   margin-bottom: 10px;
 }
 
+.sidenav section .character:hover {
+  background-color: orangered;
+  cursor: pointer;
+}
+
 .sidenav section .character p {
   font-weight: 500;
   font-size: 18px;
 }
 
+.sidenav section .character:hover p {
+  color: white;
+}
+
 .sidenav section .character span {
   font-weight: 300;
   font-size: 12px;
+}
+
+.sidenav section .character:hover span {
+  color: white;
 }
 
 .sidenav section .character + .character {
