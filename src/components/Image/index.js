@@ -10,6 +10,44 @@ function Image() {
   const [selectionX, setSelectionX] = useState(0);
   const [selectionY, setSelectionY] = useState(0);
   const [showSelection, setShowSelection] = useState(false);
+  const [charactersFound, setCharactersFound] = useState([
+    {
+      name: "Data",
+      found: true,
+      x: 717,
+      y: 947,
+    },
+    {
+      name: "John Connor",
+      found: false,
+      x: 778,
+      y: 38,
+    },
+    {
+      name: "Agent Smith",
+      found: true,
+      x: 592,
+      y: 142,
+    },
+    {
+      name: "R2-D2",
+      found: true,
+      x: 209,
+      y: 664,
+    },
+    {
+      name: "Astroboy",
+      found: true,
+      x: 238,
+      y: 1262,
+    },
+    {
+      name: "Bender",
+      found: true,
+      x: 159,
+      y: 407,
+    },
+  ]);
 
   function handleClick(e) {
     if (!showSelection) setShowSelection(true);
@@ -26,21 +64,39 @@ function Image() {
     var x = Math.round(e.clientX - rect.left);
     var y = Math.round(e.clientY - rect.top);
 
-    return e.target.tagName === "IMG"
-      ? { x, y }
-      : { x: x + selectionX, y: y + selectionY };
+    if (e.target.id === "main-img") {
+      return { x, y };
+    } else if (e.target.id === "cursor") {
+      return { x: x + selectionX, y: y + selectionY };
+    } else {
+      return { x: selectionX + 50, y: selectionY + 50 };
+    }
   }
 
   return (
     <div className="image-container">
       <div className="image" onClick={handleClick}>
-        <img src={Img} alt="" />
+        <img src={Img} alt="" id="main-img" />
 
         <SelectionArea
+          type={"cursor"}
           showSelection={showSelection}
           x={selectionX}
           y={selectionY}
         />
+
+        {charactersFound.map((char) => {
+          return (
+            <SelectionArea
+              type={"static"}
+              key={char.name}
+              name={char.name}
+              showSelection={char.found}
+              x={char.x}
+              y={char.y}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -14,3 +14,34 @@
 .selection.hidden {
   opacity: 0;
 }
+
+.selection.static {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  border-color: white;
+  transition: 200ms;
+}
+
+.selection.static:hover {
+  background-color: var(--transparent-default-color);
+}
+
+.selection.static p {
+  color: white;
+  font-weight: bold;
+  font-family: "Tajawal", sans-serif;
+
+  opacity: 0;
+  transition: 200ms;
+}
+
+.selection.static:hover p {
+  opacity: 1;
+}
+
+.selection.static.hidden {
+  display: none;
+}

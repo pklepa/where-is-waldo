@@ -1,5 +1,6 @@
 :root {
   --default-color: #1a1a2e;
+  --transparent-default-color: rgba(26, 26, 46, 0.7);
 }
 
 * {
