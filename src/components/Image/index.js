@@ -15,7 +15,6 @@ function Image() {
     if (!showSelection) setShowSelection(true);
 
     const position = getPosition(e);
-    console.log(position);
 
     // Offset the click location in half the diameter of the SelectionArea circle in order to properly center itself
     setSelectionX(position.x - 50);
@@ -31,15 +30,18 @@ function Image() {
       ? { x, y }
       : { x: x + selectionX, y: y + selectionY };
   }
-  return (
-    <div className="waldo-image" onClick={handleClick}>
-      <img src={Img} alt="" />
 
-      <SelectionArea
-        showSelection={showSelection}
-        x={selectionX}
-        y={selectionY}
-      />
+  return (
+    <div className="image-container">
+      <div className="image" onClick={handleClick}>
+        <img src={Img} alt="" />
+
+        <SelectionArea
+          showSelection={showSelection}
+          x={selectionX}
+          y={selectionY}
+        />
+      </div>
     </div>
   );
 }

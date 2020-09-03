@@ -1,10 +1,16 @@
-.waldo-image {
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container .image {
   position: relative;
 
   display: flex;
 }
 
-.waldo-image img {
+.image-container .image img {
   user-drag: none;
   user-select: none;
   -moz-user-select: none;

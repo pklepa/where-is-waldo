@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./assets/styles/global.css";
+import "./assets/styles/fonts.css";
 
 import Canvas from "./components/Canvas";
 

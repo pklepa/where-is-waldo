@@ -1,6 +1,12 @@
+:root {
+  --default-color: #1a1a2e;
+}
+
 * {
   margin: 0;
   padding: 0;
 
   box-sizing: border-box;
+
+  color: var(--default-color);
 }
