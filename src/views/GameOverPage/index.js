@@ -11,6 +11,7 @@ function GetHighscores() {
     const unsubscribe = firebase
       .firestore()
       .collection("raid3_highscores")
+      .orderBy("time_in_seconds", "asc")
       .onSnapshot((snapshot) => {
         const newScores = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -33,6 +34,24 @@ function GameOverPage() {
 
   const highscores = GetHighscores();
 
+  const [playerName, setPlayerName] = useState("");
+  const [timeElapsed, setTimeElapsed] = useState(123);
+
+  function onSubmit(e) {
+    e.preventDefault();
+
+    firebase
+      .firestore()
+      .collection("raid3_highscores")
+      .add({
+        player_name: playerName || "Anonymous",
+        time_in_seconds: timeElapsed,
+      })
+      .then(() => {
+        setPlayerName("");
+      });
+  }
+
   return (
     <div className="overlay-container">
       <div className="overlay-content">
@@ -40,8 +59,14 @@ function GameOverPage() {
         <p>You found all the characters in</p>
         <h2>14 min : 56 seconds</h2>
 
-        <form onSubmit={(e) => e.preventDefault()}>
-          <input placeholder="Your name" type="text" maxLength="20" />
+        <form onSubmit={onSubmit}>
+          <input
+            placeholder="Your name"
+            type="text"
+            maxLength="20"
+            value={playerName}
+            onChange={(e) => setPlayerName(e.currentTarget.value)}
+          />
           <button type="submit">Submit</button>
         </form>
 
