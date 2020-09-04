@@ -6,7 +6,7 @@ import Canvas from "../../components/Canvas";
 import GameOverPage from "../GameOverPage";
 
 function GamePage() {
-  const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState(true);
 
   function isGameOver(value) {
     window.scrollTo(0, 0);

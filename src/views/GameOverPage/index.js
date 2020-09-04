@@ -13,7 +13,15 @@ function GameOverPage() {
     <div className="overlay-container">
       <div className="overlay-content">
         <h1>Well done!</h1>
-        <p>You found all the characters in XX minutes and YY seconds</p>
+        <p>You found all the characters in</p>
+        <h2>14 min : 56 seconds</h2>
+
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input placeholder="Your name" type="text" maxLength="20" />
+          <button type="submit">Submit</button>
+        </form>
+
+        <p> &gt;&gt; Submit your name to see the highscores &lt;&lt; </p>
       </div>
     </div>
   );
