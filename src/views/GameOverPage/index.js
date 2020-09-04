@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./index.css";
+
+import firebase from "../../firebase";
+
+function GetHighscores() {
+  const [scores, setScores] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = firebase
+      .firestore()
+      .collection("raid3_highscores")
+      .onSnapshot((snapshot) => {
+        const newScores = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setScores(newScores);
+      });
+
+    return () => unsubscribe();
+  }, []);
+
+  return scores;
+}
 
 function GameOverPage() {
   // TODO: Calculate the time elapsed since the start of the game
 
   // TODO: Add options buttons to restart current game, back to homepage or see highscores
+
+  const highscores = GetHighscores();
 
   return (
     <div className="overlay-container">
@@ -22,18 +48,12 @@ function GameOverPage() {
         <p> &gt;&gt; Submit your name to see the highscores &lt;&lt; </p>
 
         <ol className="highscores">
-          <li>
-            Player
-            <span>99 seconds</span>
-          </li>
-          <li>
-            Player
-            <span>99 seconds</span>
-          </li>
-          <li>
-            Player
-            <span>99 seconds</span>
-          </li>
+          {highscores.map((score) => (
+            <li key={score.id}>
+              {score.player_name}
+              <span>{score.time_in_seconds} seconds</span>
+            </li>
+          ))}
         </ol>
       </div>
     </div>
