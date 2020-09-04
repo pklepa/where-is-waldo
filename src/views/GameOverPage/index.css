@@ -90,3 +90,28 @@
   height: 100%;
   color: var(--default-color);
 }
+
+.highscores {
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 8px 15px;
+}
+
+.highscores li {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+}
+
+.highscores li span {
+  color: darkorange;
+  font-weight: bold;
+}

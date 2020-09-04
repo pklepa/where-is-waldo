@@ -5,8 +5,6 @@ import "./index.css";
 function GameOverPage() {
   // TODO: Calculate the time elapsed since the start of the game
 
-  // TODO: Create a Form to take player's name to push to highscores
-
   // TODO: Add options buttons to restart current game, back to homepage or see highscores
 
   return (
@@ -22,6 +20,21 @@ function GameOverPage() {
         </form>
 
         <p> &gt;&gt; Submit your name to see the highscores &lt;&lt; </p>
+
+        <ol className="highscores">
+          <li>
+            Player
+            <span>99 seconds</span>
+          </li>
+          <li>
+            Player
+            <span>99 seconds</span>
+          </li>
+          <li>
+            Player
+            <span>99 seconds</span>
+          </li>
+        </ol>
       </div>
     </div>
   );
