@@ -29,6 +29,8 @@
   font-family: "Exo 2", sans-serif;
   font-weight: 500;
   font-size: 34px;
+
+  line-height: 1.5em;
 }
 
 .sidenav header h1 strong {
@@ -46,6 +48,10 @@
   font-size: 22px;
 
   margin-bottom: 10px;
+}
+
+.sidenav section .character {
+  padding: 0 8px;
 }
 
 .sidenav section .character:hover {
