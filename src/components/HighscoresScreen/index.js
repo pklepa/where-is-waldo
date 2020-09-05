@@ -43,7 +43,16 @@ function HighscoresScreen() {
               key={score.id}
             >
               {score.player_name}
-              <span>{score.time_in_seconds} seconds</span>
+
+              <span>{`${
+                score.elapsedTime.hours ? score.elapsedTime.hours + "h" : ""
+              } ${
+                score.elapsedTime.minutes
+                  ? score.elapsedTime.minutes + "min"
+                  : ""
+              } ${
+                score.elapsedTime.seconds ? score.elapsedTime.seconds + "s" : ""
+              }`}</span>
             </li>
           );
         })}

@@ -3,16 +3,31 @@ import React, { useState } from "react";
 import "./index.css";
 
 import firebase from "../../firebase";
+import differenceInSeconds from "date-fns/differenceInSeconds";
+import intervalToDuration from "date-fns/intervalToDuration";
 
 function EndScreen(props) {
-  // TODO: Calculate the time elapsed since the start of the game
-
   // TODO: Add options buttons to restart current game, back to homepage or see highscores
 
   const [playerName, setPlayerName] = useState("");
-  const [timeElapsed, setTimeElapsed] = useState(123);
+  const [timeElapsed, setTimeElapsed] = useState("");
+  const [timeElapsedInSeconds, setTimeElapsedInSeconds] = useState("");
 
-  const { setShowHighscores } = props;
+  const { startTime, setShowHighscores } = props;
+
+  useState(() => {
+    const endTime = new Date();
+    console.log({ endTime, startTime });
+
+    setTimeElapsedInSeconds(differenceInSeconds(endTime, startTime));
+
+    setTimeElapsed(
+      intervalToDuration({
+        start: startTime,
+        end: endTime,
+      })
+    );
+  }, []);
 
   function onSubmit(e) {
     e.preventDefault();
@@ -22,7 +37,8 @@ function EndScreen(props) {
       .collection("raid3_highscores")
       .add({
         player_name: playerName || "Anonymous",
-        time_in_seconds: timeElapsed,
+        elapsedTime: timeElapsed,
+        time_in_seconds: timeElapsedInSeconds,
       })
       .then(() => {
         setPlayerName("");
@@ -34,7 +50,9 @@ function EndScreen(props) {
     <div className="endScreen-container">
       <h1>Well done!</h1>
       <p>You found all the characters in</p>
-      <h2>14 min : 56 seconds</h2>
+      <h2>{`${timeElapsed.hours ? timeElapsed.hours + "h " : ""}
+      ${timeElapsed.minutes ? timeElapsed.minutes + "min " : ""}
+      ${timeElapsed.seconds ? timeElapsed.seconds + "s" : ""}`}</h2>
 
       <form onSubmit={onSubmit}>
         <input

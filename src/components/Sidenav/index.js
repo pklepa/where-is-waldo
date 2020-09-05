@@ -3,6 +3,11 @@ import React from "react";
 import "./index.css";
 
 // TODO: Link each character to its IMDb page with a photo for reference
+
+// TODO: Cross character name when found
+
+// TODO: Instead of hardcoding characters, map from the respective .json file
+
 function Sidenav() {
   return (
     <div className="sidenav">
