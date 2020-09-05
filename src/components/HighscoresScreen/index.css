@@ -1,0 +1,73 @@
+.highscores-container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.highscores-container h1 {
+  color: white;
+
+  width: 100%;
+  padding-top: 12px;
+  margin-bottom: 40px;
+  border: 4px solid white;
+  border-radius: 10px;
+  text-align: center;
+
+  font-family: "Tajawal", sans-serif;
+  font-size: 40px;
+}
+
+.highscores-container .highscores {
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+
+  padding: 20px 15px;
+}
+
+.highscores-container .highscores li {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  font-size: 20px;
+  font-family: "Dosis", sans-serif;
+  line-height: 1.5em;
+
+  border-radius: 10px;
+  padding: 0 8px;
+}
+
+.highscores-container .highscores li span {
+  color: #fd8c21;
+
+  font-weight: 500;
+}
+
+.highscores-container .highscores li.podium {
+  font-weight: bold;
+}
+
+.highscores-container .highscores li.podium span {
+  color: white;
+  font-weight: bold;
+}
+
+.highscores-container .highscores li.first {
+  background-color: #fda403;
+}
+
+.highscores-container .highscores li.second {
+  background-color: #c0c0c0;
+}
+
+.highscores-container .highscores li.third {
+  background-color: #d65f00;
+}
