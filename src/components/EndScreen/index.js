@@ -9,8 +9,6 @@ function EndScreen(props) {
 
   // TODO: Add options buttons to restart current game, back to homepage or see highscores
 
-  // TODO: Style TOP 3 scores differently (maybe some medals)
-
   const [playerName, setPlayerName] = useState("");
   const [timeElapsed, setTimeElapsed] = useState(123);
 

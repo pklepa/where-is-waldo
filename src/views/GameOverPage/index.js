@@ -6,7 +6,7 @@ import EndScreen from "../../components/EndScreen";
 import HighscoresScreen from "../../components/HighscoresScreen";
 
 function GameOverPage() {
-  const [showHighscores, setShowHighscores] = useState(true);
+  const [showHighscores, setShowHighscores] = useState(false);
 
   return (
     <div className="overlay">

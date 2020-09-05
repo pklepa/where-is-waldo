@@ -61,7 +61,27 @@
 }
 
 .highscores-container .highscores li.first {
+  position: relative;
+
+  justify-content: flex-start;
+
   background-color: #fda403;
+}
+
+.highscores-container .highscores li.first span {
+  position: absolute;
+  right: 8px;
+}
+
+.highscores-container .highscores li.first:before {
+  display: block;
+  content: " ";
+  background-image: url("../../assets/images/trophy.svg");
+  background-size: 20px 20px;
+  height: 20px;
+  width: 20px;
+
+  margin-right: 8px;
 }
 
 .highscores-container .highscores li.second {
