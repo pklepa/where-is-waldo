@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./index.css";
 
-import Canvas from "../../components/Canvas";
+import Game from "../../components/Game";
 import GameOverPage from "../GameOverPage";
 
 function GamePage() {
@@ -22,7 +22,7 @@ function GamePage() {
 
   return (
     <div className="page-container">
-      <Canvas setGameOver={isGameOver} />
+      <Game setGameOver={isGameOver} />
 
       {gameOver ? <GameOverPage startTime={startTime} /> : ""}
     </div>

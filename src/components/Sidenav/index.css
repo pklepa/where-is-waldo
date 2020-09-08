@@ -64,6 +64,13 @@
   font-size: 18px;
 }
 
+.sidenav section .character.found p {
+  color: #b3b3b3;
+  text-decoration: line-through;
+
+  transition: 400ms;
+}
+
 .sidenav section .character:hover p {
   color: white;
 }
@@ -71,6 +78,12 @@
 .sidenav section .character span {
   font-weight: 300;
   font-size: 12px;
+}
+
+.sidenav section .character.found span {
+  color: #a3a3a3;
+
+  transition: 400ms;
 }
 
 .sidenav section .character:hover span {
