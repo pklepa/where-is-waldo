@@ -9,11 +9,10 @@
   padding: 0;
 
   line-height: 1.5em;
+  font-size: 16px;
+  color: var(--default-color);
 
   box-sizing: border-box;
-  overflow-x: hidden;
-
-  color: var(--default-color);
 }
 
 html {

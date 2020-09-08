@@ -16,6 +16,18 @@ function Sidenav(props) {
           </h1>
         </header>
 
+        <div className="toolbar">
+          <button>
+            <span>home</span>
+          </button>
+          <button>
+            <span>poll</span>
+          </button>
+          <button>
+            <span>help</span>
+          </button>
+        </div>
+
         <section>
           <h2>Easy</h2>
 
