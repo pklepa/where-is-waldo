@@ -41,7 +41,6 @@ The illustration is authored by the amazing artist [Laurie Greasly](https://twit
 ### Libraries, extensions and tools
 
 - [Firebase's Firestore](https://firebase.google.com/docs/firestore) - Scalable, flexible NoSQL database for web, mobile and server development.
-- [Husky](https://www.npmjs.com/package/husky) - Workflow improvement package to add custom scripts against the repo (in this case, pre-commiting linting and formating)
 - [ESLint](https://eslint.org/) - A linter tool to standardize code
 - [Prettier](https://prettier.io/) - Code formatter
 - [Github Pages](https://pages.github.com/) - Hosting
@@ -49,8 +48,6 @@ The illustration is authored by the amazing artist [Laurie Greasly](https://twit
 ## More information
 
 - Made as a solution for the Image Tagging Project in [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/where-s-waldo-a-photo-tagging-app-javascript)
-
-- [Unit testing in JavaScript, by FunFunFunction](https://www.youtube.com/watch?v=3PjdxjWK0F0)
 
 - [ESLint and Prettier configuration on VSCode, by Manorisms](https://www.youtube.com/watch?v=bfyI9yl3qfE)
 
