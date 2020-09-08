@@ -8,6 +8,8 @@ import Sidenav from "../Sidenav";
 import charactersData from "../../data/raid3.json";
 
 function Game(props) {
+  // TODO: Move the .json file from /src to Firebase Storage
+
   const [characters, setCharacters] = useState(charactersData);
 
   return (
