@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# where-is-waldo
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+[Odin] Image tagging app using the visual puzzle format of "Where is Waldo?".
 
-### `npm start`
+_Where's Waldo?_ is a series of book that popularized the intricated super detailed illustration style. This application shows one of these images and allows users to interact with it in order to seek and find some recognizible characters, as well as compete with each other in a Highscores board.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The illustration is authored by the amazing artist [Laurie Greasly](https://twitter.com/lauriegreasley).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+> See it live on [pklepa.github.io/where-is-waldo](https://pklepa.github.io/where-is-waldo/)
 
-### `npm test`
+### Screenshots
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### illustration
 
-### `npm run build`
+![SS_battleship_web](https://user-images.githubusercontent.com/22618438/92490632-a3f8d100-f1c7-11ea-8cd9-e1640792f0bd.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### highscores
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![SS_battleship_tests](https://user-images.githubusercontent.com/22618438/92490063-e79f0b00-f1c6-11ea-86a5-322cf2f31e9f.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Objectives & Outcomes
 
-### `npm run eject`
+- Interact with a NoSQL flexible database.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Design an interesting application with smooth transitions and animations.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Understand and integrate a Backend-as-a-Service (BaaS) provider in Firebase into the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Familiarize with Firebase's services, in particular Cloud Firestore.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Further improve React proficiency in functional components using Hooks.
 
-## Learn More
+## Development
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Javascript Framework
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React](https://github.com/facebook/create-react-app)
 
-### Code Splitting
+### Libraries, extensions and tools
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- [Firebase's Firestore](https://firebase.google.com/docs/firestore) - Scalable, flexible NoSQL database for web, mobile and server development.
+- [Husky](https://www.npmjs.com/package/husky) - Workflow improvement package to add custom scripts against the repo (in this case, pre-commiting linting and formating)
+- [ESLint](https://eslint.org/) - A linter tool to standardize code
+- [Prettier](https://prettier.io/) - Code formatter
+- [Github Pages](https://pages.github.com/) - Hosting
 
-### Analyzing the Bundle Size
+## More information
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- Made as a solution for the Image Tagging Project in [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/where-s-waldo-a-photo-tagging-app-javascript)
 
-### Making a Progressive Web App
+- [Unit testing in JavaScript, by FunFunFunction](https://www.youtube.com/watch?v=3PjdxjWK0F0)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- [ESLint and Prettier configuration on VSCode, by Manorisms](https://www.youtube.com/watch?v=bfyI9yl3qfE)
 
-### Advanced Configuration
+- [GH-Pages Deployment](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- You can buy the art as a poster from [Hcgart](https://hcgart.com/products/the-raid-3-scourge-of-the-machines-screen-print-by-laurie-greasley).
 
-### Deployment
+## Future works
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+As on any project, there are always more things that I would like to implement that didn't make it to the final version you see live. This section lists a few of them for future me to pickup and add them.
 
-### `npm run build` fails to minify
+- Main menu page with introduction, basic instructions, image selection and direct acess to highscores.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Add the rest of "The Raid" illustration collection by the artist. See [The Raid](https://www.reddit.com/r/wimmelbilder/comments/9eeub4/the_raid_by_josan_gonzalez_and_laurie_greasley/) and [The Raid 2: Incident of line 13](https://www.reddit.com/r/wimmelbilder/comments/9y2uni/the_raid_2_incident_on_line_13_by_josan_gonzalez/)
+
+- Add credits somewhere (both to the Artists and to myself)
+
+- Refactor sidebar to Read from the .json file
+
+- Lift up the game logic and state to a more appropriate component
