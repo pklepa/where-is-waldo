@@ -60,7 +60,6 @@
 
 .endScreen-container form input {
   background-color: var(--default-color);
-  padding-top: 8px;
 
   font-size: 24px;
   height: 100%;
@@ -69,9 +68,10 @@
 
 .endScreen-container form button {
   background-color: white;
-  padding-top: 8px;
 
   font-size: 20px;
   height: 100%;
   color: var(--default-color);
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
 }

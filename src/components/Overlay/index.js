@@ -4,8 +4,10 @@ import "./index.css";
 
 import EndScreen from "../../components/EndScreen";
 import HighscoresScreen from "../../components/HighscoresScreen";
+import HomeScreen from "../HomeScreen";
 
-function GameOverPage(props) {
+function Overlay(props) {
+  const [showHome, setShowHome] = useState(true);
   const [showHighscores, setShowHighscores] = useState(
     props.showHighscores || false
   );
@@ -13,17 +15,19 @@ function GameOverPage(props) {
   return (
     <div className="overlay">
       <div className="overlay-content">
-        {showHighscores ? (
+        {showHome && <HomeScreen />}
+
+        {/* {showHighscores ? (
           <HighscoresScreen />
         ) : (
           <EndScreen
             startTime={props.startTime}
             setShowHighscores={setShowHighscores}
           />
-        )}
+        )} */}
       </div>
     </div>
   );
 }
 
-export default GameOverPage;
+export default Overlay;

@@ -57,6 +57,8 @@ function HighscoresScreen() {
           );
         })}
       </ol>
+
+      <button>home</button>
     </div>
   );
 }

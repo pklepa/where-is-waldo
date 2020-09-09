@@ -5,7 +5,7 @@ import "./index.css";
 function Sidenav(props) {
   // TODO: Add a toolbar with icons for Help, Highscores and Back to menu
 
-  const { characters } = props;
+  const { characters, setShowHighscores } = props;
 
   return (
     <div className="sidenav">
@@ -20,7 +20,11 @@ function Sidenav(props) {
           <button>
             <span>home</span>
           </button>
-          <button>
+          <button
+            onClick={() => {
+              setShowHighscores(true);
+            }}
+          >
             <span>poll</span>
           </button>
           <button>

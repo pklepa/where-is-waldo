@@ -1,6 +1,11 @@
 .highscores-container {
   width: 100%;
   padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .highscores-container h1 {
@@ -15,6 +20,20 @@
 
   font-family: "Tajawal", sans-serif;
   font-size: 40px;
+}
+
+.highscores-container button {
+  margin-top: 30px;
+  font-family: "Material Icons";
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.highscores-container button:hover {
+  color: orangered;
+  transform: scale(1.2);
 }
 
 .highscores-container .highscores {

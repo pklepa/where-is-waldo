@@ -14,7 +14,10 @@ function Game(props) {
 
   return (
     <div className="canvas-container">
-      <Sidenav characters={characters} />
+      <Sidenav
+        characters={characters}
+        setShowHighscores={props.setShowHighscores}
+      />
       <Canvas
         characters={characters}
         setCharacters={setCharacters}

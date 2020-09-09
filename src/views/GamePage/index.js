@@ -3,15 +3,18 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 
 import Game from "../../components/Game";
-import GameOverPage from "../GameOverPage";
+import Overlay from "../../components/Overlay";
 
 function GamePage() {
-  const [gameOver, setGameOver] = useState(false);
-  const [startTime, setStartTime] = useState("");
+  const [overlay, setOverlay] = useState(true);
+  const [showHighscores, setShowHighscores] = useState(false);
+  const [startTime, setStartTime] = useState(
+    new Date(2018, 11, 24, 10, 33, 30, 0)
+  );
 
   function isGameOver(value) {
     window.scrollTo(0, 0);
-    setGameOver(value);
+    setOverlay(value);
   }
 
   useEffect(() => {
@@ -22,9 +25,23 @@ function GamePage() {
 
   return (
     <div className="page-container">
-      <Game setGameOver={isGameOver} />
+      <Game
+        setGameOver={isGameOver}
+        setShowHighscores={(val) => {
+          setOverlay(true);
+          setShowHighscores(val);
+        }}
+      />
 
-      {gameOver ? <GameOverPage startTime={startTime} /> : ""}
+      {overlay ? (
+        <Overlay
+          startTime={startTime}
+          showHighscores={showHighscores}
+          setShowHighscores={setShowHighscores}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
