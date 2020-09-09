@@ -2,6 +2,8 @@ import React from "react";
 
 import "./index.css";
 
+// TODO: Implement buttons onClick
+
 function ImagePreview(props) {
   return (
     <div className="preview-container">
