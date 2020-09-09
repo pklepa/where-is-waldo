@@ -5,7 +5,7 @@ import "./index.css";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
 
-import Img1 from "../../assets/images/raid.jpg";
+import Img1 from "../../assets/images/raid1.jpg";
 import Img2 from "../../assets/images/raid2.jpg";
 import Img3 from "../../assets/images/raid3.png";
 import ImagePreview from "../ImagePreview";
@@ -37,21 +37,21 @@ function HomeScreen(props) {
             />
           }
           goToHighscores={goToHighscores}
-          startGame={startGame}
+          startGame={() => startGame("raid1")}
         />
         <ImagePreview
           title="Incident on Line 13"
           author={`Josan Gonzalez & Laurie Greasley`}
           img={<img style={{ width: 300 }} src={Img2} alt="Raid 2" />}
           goToHighscores={goToHighscores}
-          startGame={startGame}
+          startGame={() => startGame("raid2")}
         />
         <ImagePreview
           title="Scourge of the Machines"
           author={`Laurie Greasley`}
           img={<img style={{ width: 300 }} src={Img3} alt="Raid 3" />}
           goToHighscores={goToHighscores}
-          startGame={startGame}
+          startGame={() => startGame("raid3")}
         />
       </Carousel>
     </div>

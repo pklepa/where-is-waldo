@@ -2,14 +2,22 @@ import React, { useState, useEffect } from "react";
 
 import "./index.css";
 
-import Img from "../../assets/images/raid3.png";
+import Raid1 from "../../assets/images/raid1.jpg";
+import Raid2 from "../../assets/images/raid2.jpg";
+import Raid3 from "../../assets/images/raid3.png";
 import SelectionArea from "../SelectionArea";
 
 function Canvas(props) {
   const [selectPosition, setSelectPosition] = useState({ x: 0, y: 0 });
   const [showSelection, setShowSelection] = useState(false);
 
-  const { characters, setCharacters, setGameOver } = props;
+  const { characters, setCharacters, setGameOver, currentImage } = props;
+
+  const ImageLibrary = {
+    raid1: Raid1,
+    raid2: Raid2,
+    raid3: Raid3,
+  };
 
   function handleClick(e) {
     if (!showSelection) setShowSelection(true);
@@ -36,6 +44,7 @@ function Canvas(props) {
   }
 
   useEffect(() => {
+    console.log(selectPosition);
     const updatedCharacters = characters.slice();
     updatedCharacters.forEach((char) => {
       if (selectPosition.x > char.x - 50 && selectPosition.x < char.x + 50) {
@@ -65,7 +74,7 @@ function Canvas(props) {
   return (
     <div className="image-container">
       <div className="image" onClick={handleClick}>
-        <img src={Img} alt="" id="main-img" />
+        <img src={ImageLibrary[currentImage]} alt="" id="main-img" />
 
         <SelectionArea
           type={"cursor"}

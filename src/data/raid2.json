@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "name": "Pennywise",
+    "film": "It (2017)",
+    "difficulty": "easy",
+    "url": "https://www.imdb.com/title/tt1396484/characters/nm0803889?ref_=tt_cl_t8",
+    "found": false,
+    "x": 713,
+    "y": 1852
+  },
+  {
+    "id": 1,
+    "name": "Jason",
+    "film": "Friday the 13th (1980)",
+    "difficulty": "easy",
+    "url": "https://www.imdb.com/title/tt0080761/?ref_=tt_ch",
+    "found": false,
+    "x": 245,
+    "y": 566
+  },
+  {
+    "id": 2,
+    "name": "Leatherface",
+    "film": "The Texas Chainsaw Massacre (1970)",
+    "difficulty": "easy",
+    "url": "https://www.imdb.com/title/tt0072271/characters/nm0360815?ref_=tt_cl_t8",
+    "found": false,
+    "x": 875,
+    "y": 524
+  },
+  {
+    "id": 3,
+    "name": "Chucky",
+    "film": "Child's Play (1988)",
+    "difficulty": "medium",
+    "url": "https://www.imdb.com/title/tt0094862/characters/nm0000374?ref_=tt_cl_t4",
+    "found": false,
+    "x": 61,
+    "y": 366
+  },
+  {
+    "id": 4,
+    "name": "MacReady",
+    "film": "The Thing (1980)",
+    "difficulty": "medium",
+    "url": "https://www.imdb.com/title/tt0084787/characters/nm0000621?ref_=tt_cl_t1",
+    "found": false,
+    "x": 714,
+    "y": 1129
+  },
+  {
+    "id": 5,
+    "name": "Pickle Rick",
+    "film": "Rick and Morty (2013 ~ Now)",
+    "difficulty": "hard",
+    "url": "https://www.imdb.com/title/tt2861424/mediaviewer/rm2766874368?ref_=ttmi_mi_all_sf_633",
+    "found": false,
+    "x": 52,
+    "y": 1851
+  }
+]

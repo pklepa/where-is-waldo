@@ -11,7 +11,14 @@ import HighscoresScreen from "../../components/HighscoresScreen";
 import HomeScreen from "../HomeScreen";
 
 function Overlay(props) {
-  const { overlayStatus, setOverlayStatus, startTime } = props;
+  const {
+    overlayStatus,
+    setOverlayStatus,
+    startTime,
+    setStartTime,
+    currentGame,
+    setCurrentGame,
+  } = props;
 
   function currentScreen() {
     switch (overlayStatus) {
@@ -21,7 +28,9 @@ function Overlay(props) {
             goToHighscores={() => {
               setOverlayStatus("highscores");
             }}
-            startGame={() => {
+            startGame={(val) => {
+              setStartTime(new Date());
+              setCurrentGame(val);
               setOverlayStatus("hidden");
             }}
           />
@@ -29,6 +38,7 @@ function Overlay(props) {
       case "highscores":
         return (
           <HighscoresScreen
+            currentGame={currentGame}
             goHome={() => {
               setOverlayStatus("home");
             }}
@@ -38,6 +48,7 @@ function Overlay(props) {
         return (
           <EndScreen
             startTime={startTime}
+            currentGame={currentGame}
             goToHighscores={() => {
               setOverlayStatus("highscores");
             }}

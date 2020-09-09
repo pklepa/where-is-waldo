@@ -13,7 +13,7 @@ function EndScreen(props) {
   const [timeElapsed, setTimeElapsed] = useState("");
   const [timeElapsedInSeconds, setTimeElapsedInSeconds] = useState("");
 
-  const { startTime, goToHighscores } = props;
+  const { startTime, goToHighscores, currentGame } = props;
 
   useState(() => {
     const endTime = new Date();
@@ -34,7 +34,7 @@ function EndScreen(props) {
 
     firebase
       .firestore()
-      .collection("raid3_highscores")
+      .collection(`${currentGame}_highscores`)
       .add({
         player_name: playerName || "Anonymous",
         elapsedTime: timeElapsed,

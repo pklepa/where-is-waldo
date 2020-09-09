@@ -4,13 +4,13 @@ import "./index.css";
 
 import firebase from "../../firebase";
 
-function GetHighscores() {
+function GetHighscores(currentGame) {
   const [scores, setScores] = useState([]);
 
   useEffect(() => {
     const unsubscribe = firebase
       .firestore()
-      .collection("raid3_highscores")
+      .collection(`${currentGame}_highscores`)
       .orderBy("time_in_seconds", "asc")
       .onSnapshot((snapshot) => {
         const newScores = snapshot.docs.map((doc) => ({
@@ -22,13 +22,14 @@ function GetHighscores() {
       });
 
     return () => unsubscribe();
-  }, []);
+  }, [currentGame]);
 
   return scores;
 }
 
 function HighscoresScreen(props) {
-  const highscores = GetHighscores();
+  const { currentGame } = props;
+  const highscores = GetHighscores(currentGame);
   const podium = ["first", "second", "third"];
 
   return (

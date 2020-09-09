@@ -1,0 +1,63 @@
+[
+  {
+    "id": 0,
+    "name": "Predator",
+    "film": "Predator (1987)",
+    "difficulty": "easy",
+    "url": "https://www.imdb.com/title/tt0093773/characters/nm0001310?ref_=tt_cl_t10",
+    "found": false,
+    "x": 55,
+    "y": 85
+  },
+  {
+    "id": 1,
+    "name": "Rachel",
+    "film": "Blade Runner (1982)",
+    "difficulty": "easy",
+    "url": "https://www.imdb.com/title/tt0083658/characters/nm0000707?ref_=tt_cl_t3",
+    "found": false,
+    "x": 632,
+    "y": 521
+  },
+  {
+    "id": 2,
+    "name": "Tetsuo",
+    "film": "Akira (1988)",
+    "difficulty": "medium",
+    "url": "https://www.imdb.com/title/tt0094625/characters/nm0765815?ref_=tt_cl_t2",
+    "found": false,
+    "x": 984,
+    "y": 97
+  },
+  {
+    "id": 3,
+    "name": "Space Invader Alien",
+    "film": "Space Invaders [video game] (1978)",
+    "difficulty": "medium",
+    "url": "https://www.wikiwand.com/en/Space_Invaders",
+    "found": false,
+    "x": 1072,
+    "y": 1547
+  },
+
+  {
+    "id": 4,
+    "name": "Chappie",
+    "film": "Chappie (2015)",
+    "difficulty": "hard",
+    "url": "https://www.imdb.com/title/tt1823672/characters/nm1663205?ref_=tt_cl_t1",
+    "found": false,
+    "x": 882,
+    "y": 1729
+  },
+  {
+    "id": 5,
+    "name": "V",
+    "film": "V for Vendetta (2005)",
+    "difficulty": "hard",
+    "url": "https://www.imdb.com/title/tt0434409/characters/nm0915989?ref_=tt_cl_t2",
+    "found": false,
+    "x": 81,
+    "y": 1419
+  }
+]
