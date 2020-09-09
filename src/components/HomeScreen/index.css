@@ -53,6 +53,7 @@
 
 .BrainhubCarousel__arrows:hover {
   background-color: orangered !important;
+  transition: background-color 400ms;
 }
 
 .BrainhubCarousel__arrows:disabled {

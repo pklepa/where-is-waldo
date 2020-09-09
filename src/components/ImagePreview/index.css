@@ -74,8 +74,23 @@
 
 .preview-overlay .buttons button:hover span {
   color: orangered;
-  background-color: white;
-  border-radius: 8px;
+  /* background-color: white; */
+  /* border-radius: 8px; */
 
   transform: scale(1.2);
+
+  position: relative;
+}
+
+.preview-overlay .buttons button:hover span::before {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  z-index: -1;
+
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  color: white;
+  content: " ";
 }
