@@ -4,7 +4,13 @@ import "./index.css";
 
 import firebase from "../../firebase";
 
-// TODO: Add currentGame name below the title, so the user knows which highscore table he's looking at
+// TODO: Limit the number of names to display to a maximum of 10 (?)
+
+const NAME_LIBRARY = {
+  raid1: "The Raid",
+  raid2: "Incident on Line 13",
+  raid3: "Scourge of the Machines",
+};
 
 function GetHighscores(currentGame) {
   const [scores, setScores] = useState([]);
@@ -37,6 +43,7 @@ function HighscoresScreen(props) {
   return (
     <div className="highscores-container">
       <h1>Highscores</h1>
+      <h2>{NAME_LIBRARY[currentGame]}</h2>
 
       <ol className="highscores">
         {highscores.map((score) => {

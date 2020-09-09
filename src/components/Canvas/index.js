@@ -45,7 +45,6 @@ function Canvas(props) {
   }
 
   useEffect(() => {
-    console.log(selectPosition);
     const updatedCharacters = characters.slice();
     updatedCharacters.forEach((char) => {
       if (selectPosition.x > char.x - 50 && selectPosition.x < char.x + 50) {

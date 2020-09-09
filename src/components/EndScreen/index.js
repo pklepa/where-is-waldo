@@ -17,7 +17,6 @@ function EndScreen(props) {
 
   useState(() => {
     const endTime = new Date();
-    console.log({ endTime, startTime });
 
     setTimeElapsedInSeconds(differenceInSeconds(endTime, startTime));
 
