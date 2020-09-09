@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./index.css";
-
-// TODO: Reintroduce the highscores and Endscreen pages
 
 // TODO: Write a "Help" screen with info about the author and introctions
 
@@ -13,25 +11,46 @@ import HighscoresScreen from "../../components/HighscoresScreen";
 import HomeScreen from "../HomeScreen";
 
 function Overlay(props) {
-  const [showHome, setShowHome] = useState(true);
-  const [showHighscores, setShowHighscores] = useState(
-    props.showHighscores || false
-  );
+  const { overlayStatus, setOverlayStatus, startTime } = props;
+
+  function currentScreen() {
+    switch (overlayStatus) {
+      case "home":
+        return (
+          <HomeScreen
+            goToHighscores={() => {
+              setOverlayStatus("highscores");
+            }}
+            startGame={() => {
+              setOverlayStatus("hidden");
+            }}
+          />
+        );
+      case "highscores":
+        return (
+          <HighscoresScreen
+            goHome={() => {
+              setOverlayStatus("home");
+            }}
+          />
+        );
+      case "gameover":
+        return (
+          <EndScreen
+            startTime={startTime}
+            goToHighscores={() => {
+              setOverlayStatus("highscores");
+            }}
+          />
+        );
+      default:
+        break;
+    }
+  }
 
   return (
     <div className="overlay">
-      <div className="overlay-content">
-        {showHome && <HomeScreen />}
-
-        {/* {showHighscores ? (
-          <HighscoresScreen />
-        ) : (
-          <EndScreen
-            startTime={props.startTime}
-            setShowHighscores={setShowHighscores}
-          />
-        )} */}
-      </div>
+      <div className="overlay-content">{currentScreen()}</div>
     </div>
   );
 }

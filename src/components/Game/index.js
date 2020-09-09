@@ -16,7 +16,8 @@ function Game(props) {
     <div className="canvas-container">
       <Sidenav
         characters={characters}
-        setShowHighscores={props.setShowHighscores}
+        goHome={props.goHome}
+        goToHighscores={props.goToHighscores}
       />
       <Canvas
         characters={characters}

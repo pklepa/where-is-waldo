@@ -27,7 +27,7 @@ function GetHighscores() {
   return scores;
 }
 
-function HighscoresScreen() {
+function HighscoresScreen(props) {
   const highscores = GetHighscores();
   const podium = ["first", "second", "third"];
 
@@ -58,7 +58,7 @@ function HighscoresScreen() {
         })}
       </ol>
 
-      <button>home</button>
+      <button onClick={props.goHome}>home</button>
     </div>
   );
 }

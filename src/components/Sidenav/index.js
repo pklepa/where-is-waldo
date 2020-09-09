@@ -3,9 +3,9 @@ import React from "react";
 import "./index.css";
 
 function Sidenav(props) {
-  // TODO: Add a toolbar with icons for Help, Highscores and Back to menu
+  // TODO: Make a modal popup warning that in clicking the home or highscores buttons will reset the timer
 
-  const { characters, setShowHighscores } = props;
+  const { characters, goHome, goToHighscores } = props;
 
   return (
     <div className="sidenav">
@@ -17,14 +17,10 @@ function Sidenav(props) {
         </header>
 
         <div className="toolbar">
-          <button>
+          <button onClick={goHome}>
             <span>home</span>
           </button>
-          <button
-            onClick={() => {
-              setShowHighscores(true);
-            }}
-          >
+          <button onClick={goToHighscores}>
             <span>poll</span>
           </button>
           <button>

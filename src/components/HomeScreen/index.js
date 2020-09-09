@@ -11,6 +11,8 @@ import Img3 from "../../assets/images/raid3.png";
 import ImagePreview from "../ImagePreview";
 
 function HomeScreen(props) {
+  const { goToHighscores, startGame } = props;
+
   return (
     <div className="home-container">
       <h1>
@@ -34,16 +36,22 @@ function HomeScreen(props) {
               alt="Raid 1"
             />
           }
+          goToHighscores={goToHighscores}
+          startGame={startGame}
         />
         <ImagePreview
           title="Incident on Line 13"
           author={`Josan Gonzalez & Laurie Greasley`}
           img={<img style={{ width: 300 }} src={Img2} alt="Raid 2" />}
+          goToHighscores={goToHighscores}
+          startGame={startGame}
         />
         <ImagePreview
           title="Scourge of the Machines"
           author={`Laurie Greasley`}
           img={<img style={{ width: 300 }} src={Img3} alt="Raid 3" />}
+          goToHighscores={goToHighscores}
+          startGame={startGame}
         />
       </Carousel>
     </div>

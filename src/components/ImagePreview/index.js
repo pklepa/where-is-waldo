@@ -13,11 +13,11 @@ function ImagePreview(props) {
         <h3>{props.author}</h3>
 
         <div className="buttons">
-          <button>
+          <button onClick={props.startGame}>
             <span>play_circle_fill</span>Play
           </button>
 
-          <button>
+          <button onClick={props.goToHighscores}>
             <span>poll</span>Highscores
           </button>
         </div>

@@ -13,7 +13,7 @@ function EndScreen(props) {
   const [timeElapsed, setTimeElapsed] = useState("");
   const [timeElapsedInSeconds, setTimeElapsedInSeconds] = useState("");
 
-  const { startTime, setShowHighscores } = props;
+  const { startTime, goToHighscores } = props;
 
   useState(() => {
     const endTime = new Date();
@@ -42,7 +42,7 @@ function EndScreen(props) {
       })
       .then(() => {
         setPlayerName("");
-        setShowHighscores(true);
+        goToHighscores();
       });
   }
 
