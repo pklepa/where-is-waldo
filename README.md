@@ -12,13 +12,13 @@ The illustration is authored by the amazing artist [Laurie Greasly](https://twit
 
 ### Screenshots
 
-#### illustration
+#### main menu
 
-![SS_battleship_web](https://user-images.githubusercontent.com/22618438/92490632-a3f8d100-f1c7-11ea-8cd9-e1640792f0bd.png)
+![SS_where-is-waldo_menu2](https://user-images.githubusercontent.com/22618438/92652730-b9532580-f2c3-11ea-8106-1663258090f2.png)
 
-#### highscores
+#### game
 
-![SS_battleship_tests](https://user-images.githubusercontent.com/22618438/92490063-e79f0b00-f1c6-11ea-86a5-322cf2f31e9f.png)
+![SS_where-is-waldo_game](https://user-images.githubusercontent.com/22618438/92652759-c3752400-f2c3-11ea-9f4b-bb0d687b1675.png)
 
 ## Objectives & Outcomes
 
