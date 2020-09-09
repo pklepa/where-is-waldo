@@ -59,12 +59,6 @@ The illustration is authored by the amazing artist [Laurie Greasly](https://twit
 
 As on any project, there are always more things that I would like to implement that didn't make it to the final version you see live. This section lists a few of them for future me to pickup and add them.
 
-- Main menu page with introduction, basic instructions, image selection and direct acess to highscores.
+- Add credits (both to the Artists and to myself)
 
-- Add the rest of "The Raid" illustration collection by the artist. See [The Raid](https://www.reddit.com/r/wimmelbilder/comments/9eeub4/the_raid_by_josan_gonzalez_and_laurie_greasley/) and [The Raid 2: Incident of line 13](https://www.reddit.com/r/wimmelbilder/comments/9y2uni/the_raid_2_incident_on_line_13_by_josan_gonzalez/)
-
-- Add credits somewhere (both to the Artists and to myself)
-
-- Refactor sidebar to Read from the .json file
-
-- Lift up the game logic and state to a more appropriate component
+- Write a Help page
