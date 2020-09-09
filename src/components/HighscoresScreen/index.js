@@ -4,6 +4,8 @@ import "./index.css";
 
 import firebase from "../../firebase";
 
+// TODO: Add currentGame name below the title, so the user knows which highscore table he's looking at
+
 function GetHighscores(currentGame) {
   const [scores, setScores] = useState([]);
 

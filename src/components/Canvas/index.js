@@ -10,6 +10,7 @@ import SelectionArea from "../SelectionArea";
 function Canvas(props) {
   const [selectPosition, setSelectPosition] = useState({ x: 0, y: 0 });
   const [showSelection, setShowSelection] = useState(false);
+  const [isThisGameOver, setIsThisGameOver] = useState(false);
 
   const { characters, setCharacters, setGameOver, currentImage } = props;
 
@@ -59,6 +60,8 @@ function Canvas(props) {
   }, [selectPosition]);
 
   useEffect(() => {
+    if (isThisGameOver) return;
+
     const gameOver = characters.reduce(
       (prev, curr) => {
         return { found: prev.found && curr.found };
@@ -66,7 +69,10 @@ function Canvas(props) {
       { found: true }
     );
 
-    if (gameOver.found === true) setGameOver(true);
+    if (gameOver.found === true) {
+      setGameOver(true);
+      setIsThisGameOver(true);
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [characters]);

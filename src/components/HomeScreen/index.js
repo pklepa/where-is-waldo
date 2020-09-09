@@ -27,6 +27,13 @@ function HomeScreen(props) {
 
       <Carousel arrows>
         <ImagePreview
+          title="Scourge of the Machines"
+          author={`Laurie Greasley`}
+          img={<img style={{ width: 300 }} src={Img3} alt="Raid 3" />}
+          goToHighscores={goToHighscores}
+          startGame={() => startGame("raid3")}
+        />
+        <ImagePreview
           title="The Raid"
           author={`Josan Gonzalez & Laurie Greasley`}
           img={
@@ -45,13 +52,6 @@ function HomeScreen(props) {
           img={<img style={{ width: 300 }} src={Img2} alt="Raid 2" />}
           goToHighscores={goToHighscores}
           startGame={() => startGame("raid2")}
-        />
-        <ImagePreview
-          title="Scourge of the Machines"
-          author={`Laurie Greasley`}
-          img={<img style={{ width: 300 }} src={Img3} alt="Raid 3" />}
-          goToHighscores={goToHighscores}
-          startGame={() => startGame("raid3")}
         />
       </Carousel>
     </div>
