@@ -8,8 +8,6 @@ import "./assets/styles/fonts.css";
 
 import GamePage from "./views/GamePage";
 
-// TODO: Maybe create a home-page to select multiple images
-
 // TODO: Credit the artists of the image (Josan Gonzalez and Laurie Greasly)
 
 function App() {

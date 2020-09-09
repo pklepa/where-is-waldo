@@ -4,8 +4,6 @@ import "./index.css";
 
 // TODO: Write a "Help" screen with info about the author and introctions
 
-// TODO: Actually implement the other images Raid1 and raid2
-
 import EndScreen from "../../components/EndScreen";
 import HighscoresScreen from "../../components/HighscoresScreen";
 import HomeScreen from "../HomeScreen";
